@@ -1,0 +1,43 @@
+document object model 
+it is a programing interface for webdocument -- it represents the structure of webpage as a tree of objects where each object is  correspond to a part of webpage like -- element , attributes and text
+uses -- they make webpage dynamic and interactive
+
+
+
+-->How Does the DOM Work?
+Browser Creates the DOM:
+
+When you load a web page, the browser reads the HTML and creates a DOM tree.
+
+Each HTML element (like <div>, <p>, or <h1>) becomes a node in the DOM tree.
+
+JavaScript Accesses the DOM:
+
+JavaScript can access and manipulate the DOM using methods like document.getElementById, querySelector, innerHTML, etc.
+
+Changes Reflect on the Page:
+
+When you modify the DOM using JavaScript, the browser immediately updates the page to reflect those changes.
+
+
+
+--> Difference between javascript and  document object model
+JavaScript
+What it is: JavaScript is a programming language.
+
+Purpose: It is used to add interactivity, logic, and dynamic behavior to web pages.
+
+Example: You can use JavaScript to perform calculations, handle user input, or fetch data from a server.
+
+DOM (Document Object Model)
+What it is: The DOM is a programming interface (like a bridge) that represents the structure of a web page (HTML) as a tree of objects.
+
+Purpose: It allows JavaScript to interact with and manipulate the content, structure, and style of a web page.
+
+Example: You can use the DOM to change the text of an element, add new elements, or remove existing ones.
+
+
+ -->How They Work Together
+JavaScript uses the DOM to access and modify the web page.
+
+Without the DOM, JavaScript wouldn’t be able to interact with the HTML or CSS of a page.
