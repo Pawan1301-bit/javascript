@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+    }
+    .box{
+        border: 2px solid black;
+        margin-top: 40vh;
+        display: flex;
+        align-items:center;
+        height: 60px;
+        width: 60px;
+        justify-content: center;
+    }
+</style>
+<body>
+    <!-- setInterval is used to change something after a interval of time -->
+    <div class="box">
+        hello   
+    </div>
+
+    <script >
+        function getrandomcolor(){
+            const r = Math.floor(256*Math.random());
+            const g = Math.floor(256*Math.random());
+            const b = Math.floor(256*Math.random());
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+        let a = setInterval(() => {
+            let color = getrandomcolor();
+            document.querySelector('.box').style.background = color;
+            console.log(color);
+        }, 3000);
+    </script>
+</body>
+</html>

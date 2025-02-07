@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .box{
+        border: 2px solid black;
+        margin: 8px;
+        padding: 8px;
+        width: 30vw;
+    }
+    #box1{
+        width: 30vw;
+    }
+    #box2{
+        width: 80%;
+    }
+    #box3{
+        width: 80%;
+    }
+</style>
+
+<body>
+    <button class="btn">click1</button>
+    <button onclick="run()">click2</button>
+
+    <!-- bubbling -- when we click on one box the other box inside it also get clicked -->
+    <div class="box" id="box1" >
+        <div class="box" id="box2">
+            <div class="box" id="box3">
+            </div>
+        </div>
+    </div>
+    <!-- to stop the bubbling of events we use e.stopPropogation() in the child class -->
+    
+    <script src="script.js"></script>
+
+</body>
+
+</html>
