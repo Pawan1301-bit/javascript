@@ -1,0 +1,63 @@
+javascript is a single threaded language -- means it perform one task at a time
+
+Synchronous Code  
+Task are executed sequencially each task is must completed before the nextone start
+
+Asynchronous Code
+Asynchronous code allows tasks to run in the background without blocking the main thread.
+This is crucial for tasks like fetching data from a server, reading files, or waiting for user input.
+
+The Eventloop
+JavaScript uses a EventLoop to handle asynchronous operation
+The event loop continuously checks the call stack and the callback queue. If the call stack is empty, it pushes tasks from the callback queue to the call stack for execution.
+
+
+Javascript is a single threaded language but if a line of code took too long to complete(like fetching data, user input) it will block the entire program
+to handle task like setTimeOut, fetch, DOM Events(which took large time)
+These operations are not executed directly in your JavaScript program. Instead, they are handled outside your JavaScript file by the browser's Web APIs (in a browser environment) 
+
+
+
+--> Steps of excecution 
+
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Timeout callback");
+}, 2000);
+
+console.log("End");
+
+
+step1 -->console.log("Start")
+This is a synchronous operation.
+It is added to the call stack, executed immediately, and then removed from the call stack.
+
+
+step2 -->setTimeout(() => { console.log("Timeout callback"); }, 2000);
+This is an asynchronous operation.
+The setTimeout function is added to the call stack, and the browser's Web API starts a timer for 2 seconds.
+The setTimeout function itself completes immediately, and the program moves to the next line.
+The callback function (() => { console.log("Timeout callback"); }) is registered with the Web API but not executed yet.
+
+
+step3 --> console.log("End")
+This is another synchronous operation.
+It is added to the call stack, executed immediately, and then removed from the call stack.
+
+step4 --> Timer Completion (After 2 Seconds)
+After 2 seconds, the timer completes, and the callback function (() => { console.log("Timeout callback"); }) is moved to the callback queue.
+
+
+step5--> Event Loop
+The event loop continuously checks if the call stack is empty.
+Once the call stack is empty (after console.log("End") is executed), the event loop moves the callback function from the callback queue to the call stack for execution.
+
+step6-->console.log("Timeout callback")
+The callback function is executed, and console.log("Timeout callback") is added to the call stack.
+It logs "Timeout callback" to the console.
+
+-->final output
+Start
+End
+Timeout callback
