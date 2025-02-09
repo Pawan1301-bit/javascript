@@ -41,7 +41,8 @@
             weatherPromises.push(fetchWeather(city));
         }
         const weatherResults = await Promise.all(weatherPromises);
-    
+        
+        
         weatherResults.forEach(result=>{
             if (result) {
               console.log(`${result.city}: ${result.temperature}°C`);
