@@ -10,11 +10,10 @@ async function logdata(){
     city_temp = weather.temp;
 
 //and the last part is to display the city name and the tempreature
-
-    let element = document.createElement("h2");
-    element.innerHTML = `Tempreature of ${city_name} : ${city_temp}`;
-    // element.setAttribute("class", "temp");
-    document.querySelector(".temp").replaceWith(element);
+let element = document.createElement("h2");
+element.innerHTML = `Temperature of ${city_name} : ${city_temp}`;
+element.setAttribute("class", "temp"); // Add the class "temp" to the new element
+document.querySelector(".temp").replaceWith(element);
 }
 
 // creating another evvent listnerr for button also 
